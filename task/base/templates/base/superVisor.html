@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>update your {{ vendor.username }} vendor inventory </h1>
+
+<form method="post" action="/updateitem">
+    <formfield>
+        <p>{{ supervisor.username }}</p><input type="hidden" name="supervisor" value="{{ supervisor.id }}">
+        <p>scooty--------{{ inventory.scooty }}</p><input type="submit" value="add_scooty" name="scooty">
+        <input type="submit" value="del_scooty" name="scooty_d"><br><br>
+        <p>bike----------{{ inventory.bike }}</p><input type="submit" value="add_bike" name="bike">
+        <input type="submit" value="del_bike" name="bike_d"><br><br>
+    </formfield>
+</form>
+<p>
+    {% if success %}
+        item value updated successfully!!
+    {% endif %}
+</p>
+<p>
+    {% if failure %}
+        unable to delete item due to 0 bikes or scooty!!!
+    {% endif %}
+</p>
+
+</body>
+</html>

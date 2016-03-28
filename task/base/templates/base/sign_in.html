@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="/login">
+    <formfield>
+        username<input type="text" name="username"><br><br>
+        password<input type="password" name="password"><br><br>
+        <input type="submit" value="login">
+    </formfield>
+</form>
+
+
+<form method="post" action="/signup">
+   <fieldset>
+       first name:- <input type="text" name="firstname"><br><br>
+       last name:- <input type="text" name="lastname"><br><br>
+       username:- <input type="text" name="username"><br><br>
+       password:- <input type="password" name="password"><br><br>
+       <input type="submit" value="signup">
+   </fieldset>
+</form>
+{% if user_exists %}
+    user already registered!!
+{% endif %}
+
+</body>
+</html>

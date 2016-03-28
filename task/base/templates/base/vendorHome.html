@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% if success1 %}supervisor added successfully!!{% endif %}</title>
+</head>
+<body>
+<form method="post" action="/addsupervisor">
+    add supervisor<br>
+    <formfield>
+        <input type="hidden" name="vendor" value="{{ user.id }}">
+        supervisor_name<input type="text" name="supervisor_name"><br><br>
+        supervisor_password<input type="password" name="supervisor_password"><br><br>
+        supervisor_email<input type="email" name="supervisor_email"><br><br>
+        <input type="submit" value="add supervisor">
+    </formfield>
+</form>
+
+<h1>create your inventory or update your inventory</h1>
+
+<form method="post" action="/additem">
+    <formfield>
+        <p>{{ user.username }}</p><input type="hidden" name="vendor" value="{{ user.id }}">
+        <p>scooty--------{{ inventory.scooty }}</p><input type="submit" value="add_scooty" name="scooty"><br><br>
+        <p>bike----------{{ inventory.bike }}</p><input type="submit" value="add_bike" name="bike"><br><br>
+    </formfield>
+</form>
+<p>
+    {% if success %}
+        item added successfully!!
+    {% endif %}
+</p>
+
+</body>
+</html>
